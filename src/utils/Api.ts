@@ -1,8 +1,8 @@
 class Api {
-  static url: string;
+  private url: string;
 
   constructor(url: string) {
-    Api.url = url;
+    this.url = url;
   }
 
   private static response(res: any) {
@@ -22,7 +22,7 @@ class Api {
     return Promise.reject(e);
   }
 
-  public static getChart() {
+  public getChart() {
     return fetch(`${this.url}/chart`, {
       method: 'GET',
       headers: {
@@ -30,9 +30,9 @@ class Api {
         'Content-Type': 'application/json',
       },
     })
-      .then(this.handleResponse)
-      .catch(this.handleResponseError);
+      .then(Api.handleResponse)
+      .catch(Api.handleResponseError);
   }
 }
 
-export default Api;
+export default new Api('https://6256a4056ea70370053cbb7c.mockapi.io');
