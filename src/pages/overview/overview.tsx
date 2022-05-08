@@ -6,7 +6,7 @@ import { IChartData, ITotalResultsData } from '../../interfaces/types';
 import { useAppDispatch, useAppSelector } from '../../services/hooks';
 import { getChartsData, getTotalResultData } from '../../services/reducers/chartReducer';
 import Api from '../../utils/Api';
-import { getWinsLooses } from './helpers';
+import getWinsLooses from './helpers';
 import styles from './overview.module.scss';
 
 function OverviewPage() : JSX.Element | null {

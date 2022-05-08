@@ -1,9 +1,7 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-restricted-syntax */
-/* eslint-disable guard-for-in */
 import { ITotalResultsData } from '../../interfaces/types';
 
-export const getWinsLooses = (data: any): ITotalResultsData => {
+const getWinsLooses = (data: any): ITotalResultsData => {
   const buferObj = {
     win: {
       monday: 0,
@@ -38,17 +36,21 @@ export const getWinsLooses = (data: any): ITotalResultsData => {
   const looseArray = [];
 
   for (const key in buferObj.win) {
-    winArray.push({
-      day: key,
-      value: buferObj.win[key as keyof typeof buferObj.win],
-    });
+    if (Object.prototype.hasOwnProperty.call(buferObj.win, key)) {
+      winArray.push({
+        day: key,
+        value: buferObj.win[key as keyof typeof buferObj.win],
+      });
+    }
   }
 
   for (const key in buferObj.loose) {
-    looseArray.push({
-      day: key,
-      value: buferObj.loose[key as keyof typeof buferObj.loose],
-    });
+    if (Object.prototype.hasOwnProperty.call(buferObj.loose, key)) {
+      looseArray.push({
+        day: key,
+        value: buferObj.loose[key as keyof typeof buferObj.loose],
+      });
+    }
   }
 
   return {
@@ -56,3 +58,5 @@ export const getWinsLooses = (data: any): ITotalResultsData => {
     totalLooses: looseArray,
   };
 };
+
+export default getWinsLooses;
