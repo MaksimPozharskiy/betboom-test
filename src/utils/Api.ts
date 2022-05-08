@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 class Api {
   private url: string;
 
@@ -5,7 +6,7 @@ class Api {
     this.url = url;
   }
 
-  private static response(res: any) {
+  private static response(res: Response) {
     return res.json();
   }
 

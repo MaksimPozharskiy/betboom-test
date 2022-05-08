@@ -6,7 +6,7 @@ import OverviewPage from '../../pages/overview/overview';
 import CreatePage from '../../pages/create/create';
 import PlayersPage from '../../pages/players/players';
 
-function App() {
+function App() : JSX.Element | null {
   return (
     <div className={styles.page}>
       <BrowserRouter>

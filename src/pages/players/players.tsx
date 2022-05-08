@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PlayersPage() {
+function PlayersPage() : JSX.Element | null {
   return (
     <header>
       players
