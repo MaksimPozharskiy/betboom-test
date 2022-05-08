@@ -14,7 +14,7 @@ const initialState: IPlayersInitialState = {
 };
 
 const playersReducer = createSlice({
-  name: 'chartReducer',
+  name: 'playersReducer',
   initialState,
   reducers: {
     getPlayers(state: IPlayersInitialState, action: PayloadAction<IPlayer[]>) {

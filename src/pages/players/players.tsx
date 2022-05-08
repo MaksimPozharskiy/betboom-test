@@ -21,18 +21,6 @@ function PlayersPage() : JSX.Element | null {
   );
   const dispatch = useAppDispatch();
 
-  // Если бы данные в API у запросов /chart и /players не отличались, тогда бы выглядело так:
-  // useEffect(() => {
-  //   Api.getPlayers()
-  //     .then((data : any) => {
-  //       dispatch(getPlayers(data));
-  //       dispatch(setCurrentPlayers({
-  //         Name: data[0].Name,
-  //         id: data[0].id,
-  //       }));
-  //     });
-  // }, []);
-
   useEffect(() => {
     Api.getChart()
       .then((data : IChartData[]) => {

@@ -58,6 +58,19 @@ class Api {
       .then(Api.handleResponse)
       .catch(Api.handleResponseError);
   }
+
+  public createPlayer(name: string) {
+    return fetch(`${this.url}/players/`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ Name: name }),
+    })
+      .then(Api.handleResponse)
+      .catch(Api.handleResponseError);
+  }
 }
 
 export default new Api('https://6256a4056ea70370053cbb7c.mockapi.io');
