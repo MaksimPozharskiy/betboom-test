@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
-import { ITotalResultsData } from '../../interfaces/types';
+import { IChartData, IResultData, ITotalResultsData } from '../../interfaces/types';
 
-const getWinsLooses = (data: any): ITotalResultsData => {
+const getWinsLooses = (data: IChartData[]): ITotalResultsData => {
   const buferObj = {
     win: {
       monday: 0,
@@ -22,12 +22,12 @@ const getWinsLooses = (data: any): ITotalResultsData => {
       sunday: 0,
     },
   };
-  data.forEach((item: any) => {
-    item.win.forEach((el: any) => {
+  data.forEach((item: IChartData) => {
+    item.win.forEach((el: IResultData) => {
       buferObj.win[el.day as keyof typeof buferObj.win] += el.value;
     });
 
-    item.loose.forEach((el: any) => {
+    item.loose.forEach((el: IResultData) => {
       buferObj.loose[el.day as keyof typeof buferObj.loose] += el.value;
     });
   });
