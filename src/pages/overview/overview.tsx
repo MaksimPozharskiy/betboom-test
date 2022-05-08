@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../services/hooks';
 import { getChartsData, getTotalResultData } from '../../services/reducers/chartReducer';
 import Api from '../../utils/Api';
 import { getWinsLooses } from './helpers';
+import styles from './overview.module.scss';
 
 function OverviewPage() : JSX.Element | null {
   const totalResultsData : ITotalResultsData = useAppSelector(
@@ -23,7 +24,7 @@ function OverviewPage() : JSX.Element | null {
   }, []);
 
   return (
-    <div>
+    <div className={styles.overview}>
       <LineChart width={800} height={400} data={totalResultsData.totalWins}>
         <Line type="monotone" dataKey="value" stroke="#8884d8" />
         <CartesianGrid stroke="#ccc" />
