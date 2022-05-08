@@ -8,10 +8,15 @@ export interface ITotalResultsData {
   totalLooses: IResultData[]
 }
 
+export interface IPlayer {
+  Name: string,
+  id: number,
+}
+
 export interface IChartData {
   name: string,
+  id: number,
   win: IResultData[],
   loose: IResultData[],
   bets: IResultData[],
-  id: number,
 }
