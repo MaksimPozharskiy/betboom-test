@@ -5,7 +5,7 @@ import {
 } from 'recharts';
 import { IChartData, IPlayer, IResultData } from '../../interfaces/types';
 import { useAppSelector, useAppDispatch } from '../../services/hooks';
-import { getPlayers, setCurrentPlayer, setPlayerbets } from '../../services/reducers/playersReducer';
+import { getPlayers, setCurrentPlayer, setPlayerbets } from '../../services/reducers/playersReducer/playersReducer';
 import Api from '../../utils/Api';
 import isEmptyArray from '../../utils/helpers';
 import styles from './players.module.scss';

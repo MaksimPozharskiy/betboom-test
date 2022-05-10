@@ -4,7 +4,7 @@ import {
 } from 'recharts';
 import { IChartData, ITotalResultsData } from '../../interfaces/types';
 import { useAppDispatch, useAppSelector } from '../../services/hooks';
-import { getChartsData, getTotalResultData } from '../../services/reducers/chartReducer';
+import { getChartsData, getTotalResultData } from '../../services/reducers/chartReducer/chartReducer';
 import Api from '../../utils/Api';
 import getWinsLooses from './helpers';
 import styles from './overview.module.scss';

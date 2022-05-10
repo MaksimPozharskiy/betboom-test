@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IPlayer, IResultData } from '../../interfaces/types';
+import { IPlayer, IResultData } from '../../../interfaces/types';
 
-interface IPlayersInitialState {
+export interface IPlayersInitialState {
   players: IPlayer[],
   currentPlayer: IPlayer | null,
   playerbets: IResultData[],

@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IChartData, ITotalResultsData } from '../../interfaces/types';
+import { IChartData, ITotalResultsData } from '../../../interfaces/types';
 
-interface IChartInitialState {
+export interface IChartInitialState {
   chartsData: IChartData[],
   totalResultsData: ITotalResultsData,
 }
