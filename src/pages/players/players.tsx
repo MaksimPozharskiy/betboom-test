@@ -1,5 +1,5 @@
-import { Select } from 'antd';
-import React, { useEffect } from 'react';
+import { Select, Spin } from 'antd';
+import React, { useEffect, useState } from 'react';
 import {
   LineChart, Line, CartesianGrid, XAxis, YAxis,
 } from 'recharts';
@@ -11,6 +11,7 @@ import isEmptyArray from '../../utils/helpers';
 import styles from './players.module.scss';
 
 function PlayersPage() : JSX.Element | null {
+  const [isLoading, setIsLoading] = useState(false);
   const { Option } = Select;
   const players : IPlayer[] = useAppSelector((state) => state.playersReducer.players);
   const currentPlayer : IPlayer | null = useAppSelector(
@@ -33,6 +34,7 @@ function PlayersPage() : JSX.Element | null {
           Name: playersArr[0].Name,
           id: playersArr[0].id,
         }));
+        setIsLoading(true);
       });
   }, []);
 
@@ -61,9 +63,11 @@ function PlayersPage() : JSX.Element | null {
 
   return (
     <div className={styles.players}>
-      {!isEmptyArray(players) && (
+      {!isLoading && <div className={styles.spinWrap}><Spin /></div>}
+      {!isEmptyArray(players) && isLoading && (
         <>
           <div className={styles.selectWrap}>
+
             <Select
               defaultValue={players[0].Name}
               style={{ width: 120 }}
@@ -82,10 +86,8 @@ function PlayersPage() : JSX.Element | null {
               <YAxis />
             </LineChart>
           </div>
-
         </>
       )}
-
     </div>
   );
 }
