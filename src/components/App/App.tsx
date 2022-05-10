@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import styles from './App.module.scss';
 import Header from '../Header/Header';
 import OverviewPage from '../../pages/overview/overview';
@@ -9,7 +9,7 @@ import PlayersPage from '../../pages/players/players';
 function App() : JSX.Element | null {
   return (
     <div className={styles.page}>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/overview" element={<OverviewPage />} />
@@ -18,7 +18,7 @@ function App() : JSX.Element | null {
           <Route index element={<OverviewPage />} />
           <Route path="*" element={<p>404</p>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
