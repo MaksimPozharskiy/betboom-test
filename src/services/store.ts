@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import testSlice from './reducers/testSlice';
+import chartReducer from './reducers/chartReducer/chartReducer';
+import playersReducer from './reducers/playersReducer/playersReducer';
 
 export const store = configureStore({
-  reducer: testSlice,
+  reducer: {
+    chartReducer,
+    playersReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
