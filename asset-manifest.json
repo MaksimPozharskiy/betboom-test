@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/betboom-test/static/css/main.05a5bf9f.css",
-    "main.js": "/betboom-test/static/js/main.61f83cbc.js",
+    "main.css": "/betboom-test/static/css/main.1648fa8f.css",
+    "main.js": "/betboom-test/static/js/main.ba6e0ef5.js",
     "static/js/787.893b2a46.chunk.js": "/betboom-test/static/js/787.893b2a46.chunk.js",
     "index.html": "/betboom-test/index.html",
-    "main.05a5bf9f.css.map": "/betboom-test/static/css/main.05a5bf9f.css.map",
-    "main.61f83cbc.js.map": "/betboom-test/static/js/main.61f83cbc.js.map",
+    "main.1648fa8f.css.map": "/betboom-test/static/css/main.1648fa8f.css.map",
+    "main.ba6e0ef5.js.map": "/betboom-test/static/js/main.ba6e0ef5.js.map",
     "787.893b2a46.chunk.js.map": "/betboom-test/static/js/787.893b2a46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05a5bf9f.css",
-    "static/js/main.61f83cbc.js"
+    "static/css/main.1648fa8f.css",
+    "static/js/main.ba6e0ef5.js"
   ]
 }
